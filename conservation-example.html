@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAM Digital Makers Project</title>
+    <link rel="stylesheet" href="css/pure.css" integrity="sha384-" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/side-menu.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+    <div id="main">
+        <div class="header">
+            <h1>GLAM Digital Makers Project</h1>
+            <h2>Conservation Project - intro ideas + example worksheet</h2>
+        </div>
+
+        <div class="content">
+            <p>Before handing out worksheets such as the example below, you could run through setting up one of the sensors as a whole group.</p>
+            <p>Introduce the MakeCode editor, and demonstrate connecting the blocks to, for example, get a light reading from the micro:bit's screen, and display the reading.</p>
+            <img class="pure-img-responsive" src=".\images\light-sensor-basic-code.PNG" alt="light sensor code example">
+            <p>Show them how to put their code on to the micro:bit itself - either by downloading the .hex file and dragging it onto the micro:bit drive, or by using the newer 'pair' micro:bit feature.</p>
+            <p>They can then move on to using different sensors in groups.</p>
+            <p>Some instructions for getting started with the temperature sensor are shown below.</p>
+            <a href="https://raw.githubusercontent.com/Isioviel/GLAM/master/examples/temp_example.hex" target="download">Click here to download an example final program.</a>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead bg-blue">Temperature Sensor</h2>
+            <p>The micro:bit has a few built-in <em>inputs</em>.</p>
+            <p>Test the micro:bit's built-in temperature sensor by editing your <strong>light level</strong> code.</p>
+            <p><strong>Can you get the current temperature to display on your micro:bit?</strong></p>
+            <h2 class="content-subhead bg-yellow">Making a Smart Sensor</h2>
+            <p>These two blocks of code are equivalent:</p>
+            <img class="pure-img-responsive" src=".\images\on-vs-if.PNG" alt="on button press compared to if button pressed">
+            <p><em>Note - they are not exactly the same, and have different uses. But for our purposes they accomplish the same thing.</em></p>
+            <p>Try this code with your temperature data, using the <strong>Conditionals</strong> blocks in the <strong>Logic</strong> menu.</p>
+            <p>Also in the <strong>Logic</strong> menu, are <strong>Comparison</strong> and <strong>Boolean</strong> blocks.</p>
+            <p><strong>Use these blocks to create a program that will give you appropriate warnings to protect your item from temperature changes.</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
