@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAM Digital Makers Project</title>
+    <link rel="stylesheet" href="css/pure.css" integrity="sha384-" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/side-menu.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+    <div id="main">
+        <div class="header">
+            <h1>GLAM Digital Makers Project</h1>
+            <h2>How-to: Code a micro:bit randomiser</h2>
+        </div>
+
+        <div id="intro" class="content">
+            <p><strong>Connect your micro:bit to your computer</strong>, head to <a href="" target="_blank">MakeCode</a>, and click New Project!</p>
+            <p>You will see a screen like this:</p>
+            <img class="pure-img-responsive" src=".\images\makecode-annotated.png" alt="annotated MakeCode editor">
+        </div>
+
+        <div id="step1" class="content">
+            <h2 class="content-subhead bg-yellow">Displaying a Random Number</h2>
+            <p>The first step is getting a random number, and displaying it on the micro:bit.</p>
+            <img class="pure-img-responsive" src=".\images\randomiser-variable.PNG" alt="on start, set variable to random number, display variable">
+            <ul>
+              <li>Use the <strong>Variables</strong> menu to create a variable (a placeholder for your random number).</li>
+              <li>Look in the <strong>Math</strong> menu for the random number code, and adjust it to only give you two numbers to start with: 0 and 1.</li>
+              <li>Place this code in the <strong>on start</strong> block, so it will choose your number when the micro:bit is turned on.</li>
+              <li>Finally, look in the <strong>Basic</strong> menu to find the block needed to display your <strong>variable</strong> on the micro:bit.</li>
+            </ul>
+            <p><strong>Test it on the emulator!</strong> Click reset to run the code again.</p>
+            <p><strong>To run your code on the physical micro:bit, click the Download button every time you make changes!</strong></p>
+        </div>
+
+        <div id="step2" class="content">
+            <h2 class="content-subhead bg-blue">Displaying Words</h2>
+            <p>Step two, is using the random number to choose which words to display on the micro:bit.</p>
+            <img class="pure-img-responsive" src=".\images\randomiser-if-else.PNG" alt="if number, display word">
+            <ul>
+              <li>This if-then-else block can found in the <strong>Logic</strong> menu.</li>
+              <li>Use the <strong>+</strong> symbol on the bottom of it to add extra spaces!</li>
+              <li>You can use the <strong>Comparison</strong> blocks in the <strong>Logic</strong> menu, to create the logic you want...</li>
+              <li><strong>if random number is 0, do something</strong> but <strong>if random number is 1, do something else</strong></li>
+            </ul>
+        </div>
+
+        <div id="step2" class="content">
+            <h2 class="content-subhead bg-orange">Expanding your Code</h2>
+            <p>Now make it your own!</p>
+            <ul>
+              <li>Change the random number <strong>range</strong> to add more options.</li>
+              <li>Expand your <strong>if-then-else</strong> statement with more words.</li>
+              <li>Set the displayed word with a button press or by shaking the micro:bit instead of <strong>on start</strong>!</li>
+            </ul>
+            <img class="pure-img-responsive" src=".\images\randomiser-inputs.PNG" alt="input options">
+        </div>
+
+    </div>
+
+</body>
+</html>
