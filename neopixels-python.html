@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLAM Digital Makers Project</title>
+    <link rel="stylesheet" href="css/pure.css" integrity="sha384-" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/side-menu.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+    <div id="main">
+        <div class="header">
+            <h1>GLAM Digital Makers Project</h1>
+            <h2>Using Neopixels with a BBC micro:bit</h2>
+            <img class="pure-img-responsive" src=".\images\neopixel_stick.gif" alt="neopixel demo">
+        </div>
+
+        <div id="what" class="content">
+            <h2 class="content-subhead bg-yellow">What are Neopixels?</h2>
+            <p>Neopixels are <em>addressable RGB LEDs</em>.</p>
+            <p>Unlike basic RGB LEDs, you only need one micro:bit pin to control them, and you can connect up as many pixels as you like (the micro:bit can power up to eight).</p>
+            <p>These are sticks of eight Neopixels, but they can come in a variety of forms.</p>
+            <p>Neopixel is a brand-name for WS2812 LEDs.</p>
+            <img class="pure-img-responsive" src=".\images\neopixels.png" alt="Neopixel sticks">
+        </div>
+
+        <div id="connecting" class="content">
+            <h2 class="content-subhead bg-blue">Connecting Neopixels to a BBC micro:bit</h2>
+            <p>Look at the back of the Neopixel stick, and identify the <strong>DIN (data input)</strong> end.</p>
+            <p>There are four connections: GND, 4-7VDC, and DIN. Ignore the fourth connection, which is an extra GND pin.</p>
+            <p>These connect to the micro:bit's edge connector like so:</p>
+            <ul><strong>
+              <li>GND -> 0V</li>
+              <li>4-7VDC -> 3V</li>
+              <li>DIN -> 16</li></strong>
+            </ul>
+            <p>It does not matter whether you use the front or back row of pins on the edge connector.</p>
+            <img class="pure-img-responsive" src=".\images\edge-connector-16.png" alt="edge connector, showing pins to connect">
+            <p><strong>Official Adafruit Neopixels will face 'forward', off-brand ones might face the other way, so the micro:bit is 'upside-down' when you look at the Neopixels.</strong></p>
+        </div>
+
+        <div id="programming" class="content">
+            <h2 class="content-subhead bg-orange">Programming Neopixels in MicroPython</h2>
+            <p>Try the following code on your micro:bit:</p>
+            <pre>from microbit import *
+import neopixel
+np = neopixel.NeoPixel(pin16, 8)
+for pixel in range(0, len(np)):
+    np[pixel] = (100, 0, 0)
+    np.show()</pre>
+            <p><strong>This code, when run, should turn all of the pixels red.</strong></p>
+            <p>If it does not...</p>
+            <ul>
+              <li><strong>Check your wiring</strong> – maybe the connector is the wrong way around?</li>
+              <li><strong>Check your code for errors</strong>, and flash it to your micro:bit again.</li>
+              <li>If your lights come on, but are green instead of red, then you might have green-red-blue pixels instead of red-green-blue (this is sometimes the case with off-brand LEDs). Just remember when writing your program that red and green are switched, and everything else will work the same.</li>
+            </ul>
+            <p><strong>Code breakdown:</strong></p>
+            <ul>
+              <li><code>from microbit import *, import neopixel</code><br>imports two libraries - giving us access to the code for the micro:bit, and the Neopixels.</li>
+              <li><code>np = neopixel.NeoPixel(pin16, 8)</code><br>sets which pin the Neopixels are connected to, and how many there are.</li>
+              <li><code>for pixel in range(0, len(np)):</code><br>for each pixel, from the zeroth to the last...</li>
+              <li><code>np[pixel] = (100, 0, 0)</code><br>set that pixel equal to the RGB value for red (100 red, no green or blue)...</li>
+              <li><code>np.show()</code><br>then turn that pixel on!</li>
+            </ul>
+            <p><strong>Note:</strong> in the above code, <code>100, 0, 0</code> is used to turn the LEDs red. The maximum number you can give each colour is actually <code>255</code>, however this is extremely bright!</p>
+        </div>
+
+        <div id="further" class="content">
+            <h2 class="content-subhead bg-yellow">Further Programming</h2>
+            <p>The <strong>random</strong> library is great to pair with Neopixels!</p>
+            <p>Try this example:</p>
+            <pre>from microbit import *
+import neopixel
+import random
+np = neopixel.NeoPixel(pin16, 8)
+
+red = (100, 0, 0)
+green = (0, 100, 0)
+blue = (0, 0, 100)
+colours = [red, green, blue]
+
+for pixel in range(0, len(np)):
+    np[pixel] = random.choice(colours)
+    np.show()</pre>
+            <p>For some other Neopixel code examples, <a href="https://github.com/ScienceOxford/neopixels" target="_blank">click here</a>.</p>
+            <p>Visit <a href="https://microbit-micropython.readthedocs.io/en/latest/neopixel.html" target="_blank">the documentation</a> for some further information about using Neopixels.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
